@@ -10,7 +10,7 @@ import { auth } from "../../firebase/firebase";
 import { useStateValue } from "../../StateProvider/StateProvider";
 
 function App() {
-  const [{user}, dispatch] = useStateValue();
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((authUser) => {
@@ -33,17 +33,9 @@ function App() {
   }, []);
 
   return (
-
-// route renders UI when its path matches the URL
-
-    
-    // Link  anchor  tag navigation around the app
-    
     <Router>
       <div className="app">
-
         {/* switch renders first route that matches location rather thn rendering ALL routes */}
-        
         <Switch>
           {/* will go to login page */}
           <Route path="/login">
@@ -53,7 +45,7 @@ function App() {
             <Header />
             <Checkout />
           </Route>
-        {/* will directly go to main page */}
+          {/* will directly go to main page */}
           <Route path="/">
             <Header />
             <Home />
